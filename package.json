@@ -1,0 +1,53 @@
+{
+  "name": "shield-vision",
+  "version": "1.0.0",
+  "description": "Client-side privacy masking for faces and license plates with TensorFlow.js.",
+  "main": "./dist/shield-vision.umd.cjs",
+  "module": "./dist/shield-vision.es.mjs",
+  "types": "./dist/src/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/shield-vision.es.mjs",
+      "require": "./dist/shield-vision.umd.cjs",
+      "default": "./dist/shield-vision.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:demo": "vite build --mode demo",
+    "preview": "vite preview",
+    "check": "tsc --noEmit",
+    "pretest": "npm run build",
+    "test": "node --test tests/*.test.mjs && node tests/package-smoke.mjs",
+    "audit:prod": "npm audit --omit=dev",
+    "verify": "npm run check && npm test && npm run build:demo && npm run audit:prod"
+  },
+  "keywords": [
+    "privacy",
+    "tensorflowjs",
+    "image-blur",
+    "client-side",
+    "gdpr"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vite": "^8.0.9",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "dependencies": {
+    "@tensorflow-models/blazeface": "^0.1.0",
+    "@tensorflow-models/coco-ssd": "^2.2.3",
+    "@tensorflow/tfjs": "^4.22.0",
+    "@tensorflow/tfjs-backend-wasm": "^4.22.0",
+    "@tensorflow/tfjs-backend-webgl": "^4.22.0",
+    "@tensorflow/tfjs-backend-webgpu": "^4.22.0"
+  }
+}
