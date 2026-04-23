@@ -2,14 +2,14 @@
   "name": "shield-vision",
   "version": "1.0.1",
   "description": "Client-side privacy masking for faces and license plates with TensorFlow.js.",
-  "main": "./dist/shield-vision.umd.js",
-  "module": "./dist/shield-vision.es.js",
+  "main": "./dist/shield-vision.umd.cjs",
+  "module": "./dist/shield-vision.es.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/shield-vision.es.js",
-      "default": "./dist/shield-vision.umd.js"
+      "import": "./dist/shield-vision.es.mjs",
+      "default": "./dist/shield-vision.umd.cjs"
     }
   },
   "files": [
